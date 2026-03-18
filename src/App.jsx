@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 export default function App() {
   const previewProjects = [
@@ -6,11 +6,13 @@ export default function App() {
       title: "FocusSense Smart Workspace Optimizer",
       subtitle: "Sensors • Embedded • Web Interface",
       glow: false,
+      link: "https://heaven-k.github.io/EEC172-Focussense-Final-Project/#arch",
     },
     {
       title: "Multimodal Imaging for Agriculture",
       subtitle: "Raspberry Pi • Vision • Edge AI",
       glow: true,
+      link: "https://projectgemini.ucdavis.edu/",
     },
     {
       title: "FPGA Matrix Accelerator",
@@ -35,11 +37,58 @@ export default function App() {
       featured: true,
       subtitle: "Smart environment sensing with a clean web experience",
       description:
-        "A smart workspace system that combines sensors, automation, and a polished interface to improve focus, comfort, and awareness in study and work environments.",
-      tech: ["Embedded", "Sensors", "Frontend", "System Design"],
+        "An embedded smart workspace system that monitors environmental conditions and presents live feedback through a polished web dashboard to improve focus, comfort, and awareness.",
+      tech: [
+        "Embedded Systems",
+        "Sensors",
+        "Web Dashboard",
+        "System Integration",
+        "Frontend",
+        "Real-Time Monitoring",
+      ],
       details:
-        "FocusSense is designed as a real engineering product, not just a class demo. It brings together physical sensing, decision logic, and a user-facing dashboard to make the workspace feel responsive and intelligent.",
+        "FocusSense is a smart workspace optimization project developed to make study and work environments more responsive and data-aware. The system collects live sensor data, processes environmental conditions, and presents them through an interactive dashboard so users can better understand and improve their workspace. This project combines physical sensing, embedded design, web interface development, and full system integration into one product-style engineering build.",
+      liveLink:
+        "https://heaven-k.github.io/EEC172-Focussense-Final-Project/#arch",
+      githubLink: "#",
+      images: [],
+      overviewTitle: "Project Overview",
+      overview:
+        "FocusSense was built as a complete embedded systems project that connects sensing hardware with a user-facing web experience. The goal was to create a workspace assistant that can monitor conditions such as ambient light and temperature, then display meaningful live feedback in a way that feels modern, useful, and intuitive. Instead of being just a sensor demo, the project was designed to feel like a real product with both technical depth and polished presentation.",
+      highlightCards: [
+        {
+          title: "Problem",
+          text: "Study and work environments often affect focus, comfort, and productivity, but users usually have no simple way to monitor those conditions in real time.",
+        },
+        {
+          title: "Solution",
+          text: "FocusSense provides live environmental sensing with a clean dashboard that turns raw sensor readings into an understandable and usable workspace experience.",
+        },
+        {
+          title: "Impact",
+          text: "The project demonstrates full-stack engineering across hardware, embedded systems, sensing, interface design, and product-style system integration.",
+        },
+      ],
+      sections: [
+        {
+          title: "What I Built:",   
+          text: "FocusSense is a smart workspace project that uses embedded sensors and a web dashboard to monitor environmental conditions. It collects real-time data and presents it in a simple interface so users can quickly understand what is happening in their workspace.",
+        },
+        {
+          title: "Key Features:",
+          text: "The system includes live sensor readings, a responsive dashboard, and real-time data visualization. It combines hardware sensing with a clean web interface to create an interactive and easy-to-use experience.",
+        },
+        {
+          title: "Engineering Work:",
+          text: "This project involved sensor integration, embedded system development, hardware-software communication, and front-end dashboard design. We built a system that collects environmental data, processes it, and presents it through an interactive and user-friendly interface. The work included system design, connecting sensors, and creating a clean dashboard to visualize data in real time.",
+        },
+        {
+          title: "Why It Matters:",
+          text: "FocusSense shows my ability to bring hardware and software together into one clean experience. It takes real sensor data and turns it into something clear, interactive, and easy to understand.",
+        },
+      ],
     },
+
     {
       id: 2,
       title: "Multimodal Imaging for Agriculture",
@@ -50,7 +99,9 @@ export default function App() {
         "A project exploring imaging systems and data-driven analysis to better understand agricultural conditions and support smarter decisions.",
       tech: ["Computer Vision", "Raspberry Pi", "Edge AI"],
       details:
-        "This project focuses on combining different sensing and imaging inputs to create a stronger picture of crop conditions and field-level insight.",
+        "This project develops a low-cost four-camera Raspberry Pi multispectral imaging system for agriculture, designed to support plant health analysis and field-level decision making. It combines multispectral sensing, RGB-based calibration, parallax correction, and edge-based computer vision to extract useful information such as vegetation traits and flower detection. The project is especially meaningful because it aims to make advanced agricultural imaging more affordable and practical for small-scale breeders and farmers.",
+       liveLink:"https://projectgemini.ucdavis.edu/",
+      githubLink: "#",
     },
     {
       id: 3,
@@ -62,7 +113,9 @@ export default function App() {
         "A hardware-focused project that accelerates matrix multiplication using Verilog and structured digital logic design.",
       tech: ["FPGA", "Verilog", "Digital Design"],
       details:
-        "This project shows low-level engineering work in hardware design, timing-aware thinking, and performance-focused implementation.",
+        "This project implements a matrix multiplication accelerator in Verilog using parallel hardware design. Instead of computing values step by step like software, the system performs multiple operations at the same time, significantly improving speed. Matrix multiplication is widely used in areas like machine learning, graphics, and signal processing, so accelerating it at the hardware level helps make these systems faster and more efficient.",
+      liveLink: "",
+      githubLink: "#",
     },
     {
       id: 4,
@@ -74,7 +127,9 @@ export default function App() {
         "A smart scale system that estimates jelly bean count using sensor measurement, analog amplification, and software processing.",
       tech: ["Instrumentation", "Analog", "MATLAB"],
       details:
-        "This project combines hardware measurement with data interpretation, making it a strong example of mixed hardware-software engineering.",
+        "This project builds a smart scale that estimates the number of jelly beans using a Wheatstone bridge load cell and signal conditioning. The small sensor signal is amplified using an INA125 instrumentation amplifier and a summing amplifier to fully utilize the ADC range, then read through the M2K interface and processed in MATLAB. The system converts voltage into weight using calibration and linear regression, achieving high accuracy and resolution, and includes a MATLAB GUI for real-time display, tare, calibration, and unit conversion. This project demonstrates how analog hardware, data acquisition, and software processing work together to turn physical measurements into meaningful digital information.",
+      liveLink: "",
+      githubLink: "#",
     },
     {
       id: 5,
@@ -87,6 +142,8 @@ export default function App() {
       tech: ["Python", "CNN", "Machine Learning"],
       details:
         "This project highlights applied machine learning, model development, and clean evaluation of classification performance.",
+      liveLink: "",
+      githubLink: "#",
     },
     {
       id: 6,
@@ -98,7 +155,10 @@ export default function App() {
         "Hands-on engineering in live audio systems, including setup, routing, mixing, and production support for real performance environments.",
       tech: ["Audio", "Signal Flow", "Live Systems"],
       details:
-        "This is one of the most unique parts of the portfolio because it shows engineering judgment in real spaces, not only in code or simulation.",
+        "This project showcases full-scale live audio systems engineering, from system design and equipment installation to signal flow architecture and real-time sound optimization. I build and manage complete audio systems involving microphones, instruments, mixers, and speakers to deliver clear and balanced sound in live environments. The work also involves live troubleshooting, rapid system adjustments, and training others on audio setup and operation. It highlights strong system-level thinking, leadership in technical environments, and the ability to deliver reliable performance under real-world pressure.",
+      
+      liveLink:"",
+      githubLink: "#",
     },
   ];
 
@@ -106,6 +166,88 @@ export default function App() {
   const sideProjects = projects.slice(1);
 
   const [selectedProject, setSelectedProject] = useState(null);
+  const [sensorData, setSensorData] = useState({
+    light: 67,
+    temp: 20.8,
+    mode: "Bright Boost (Auto)",
+  });
+
+  useEffect(() => {
+    let tick = 0;
+
+    const interval = setInterval(() => {
+      tick += 1;
+
+      const newLight = Math.round(
+        64 + Math.sin(tick / 3) * 6 + Math.random() * 2
+      );
+      const newTemp = Number(
+        (20.4 + Math.sin(tick / 4) * 0.7 + Math.random() * 0.15).toFixed(1)
+      );
+
+      let mode = "Bright Boost (Auto)";
+      if (newLight < 64) mode = "Focus Warm";
+      if (newLight > 71) mode = "Daylight Active";
+
+      setSensorData({
+        light: newLight,
+        temp: newTemp,
+        mode,
+      });
+    }, 1200);
+
+    return () => clearInterval(interval);
+  }, []);
+
+  const lightWidth = `${Math.max(0, Math.min(sensorData.light, 100))}%`;
+  const tempWidth = `${Math.max(0, Math.min((sensorData.temp / 30) * 100, 100))}%`;
+
+  const SensorPreview = ({ compact = false }) => (
+    <div
+      className={`sensor-preview ${compact ? "sensor-preview-compact" : ""}`}
+    >
+      <div className="sensor-preview-grid">
+        <div className="sensor-panel sensor-panel-wide">
+          <div className="sensor-label">Ambient Light</div>
+          <div className="sensor-value">
+            {sensorData.light} <span>lux</span>
+          </div>
+          <div className="sensor-bar">
+            <div
+              className="sensor-fill sensor-fill-light"
+              style={{ width: lightWidth }}
+            />
+          </div>
+        </div>
+
+        <div className="sensor-panel">
+          <div className="sensor-label">Temperature</div>
+          <div className="sensor-value">
+            {sensorData.temp} <span>°C</span>
+          </div>
+          <div className="sensor-bar">
+            <div
+              className="sensor-fill sensor-fill-temp"
+              style={{ width: tempWidth }}
+            />
+          </div>
+        </div>
+
+        <div className="sensor-panel sensor-panel-log">
+          <div className="sensor-label">Mode</div>
+          <div className="sensor-mode-row">
+            <span className="sensor-dot"></span>
+            <span>{sensorData.mode}</span>
+          </div>
+          <div className="sensor-mini-lines">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
 
   return (
     <>
@@ -140,16 +282,21 @@ export default function App() {
             </div>
 
             <div className="hero-right">
-              {previewProjects.map((project) => (
+              {previewProjects.map((project, index) => (
                 <div
                   key={project.title}
                   className={`preview-card ${
                     project.glow ? "preview-card-glow" : ""
                   }`}
                 >
-                  <div className="preview-image">
-                    <div className="preview-image-inner" />
-                  </div>
+                  {index === 0 ? (
+                    <SensorPreview compact={true} />
+                  ) : (
+                    <div className="preview-image">
+                      <div className="preview-image-inner" />
+                    </div>
+                  )}
+
                   <h3 className="preview-title">{project.title}</h3>
                   <p className="preview-subtitle">{project.subtitle}</p>
                 </div>
@@ -182,11 +329,7 @@ export default function App() {
               </div>
 
               <div className="project-image featured-image">
-                <div className="project-image-inner featured-image-inner">
-                  <div className="featured-orb orb-one" />
-                  <div className="featured-orb orb-two" />
-                  <div className="featured-grid-lines" />
-                </div>
+                <SensorPreview />
               </div>
 
               <div className="featured-content">
@@ -211,71 +354,88 @@ export default function App() {
                 </div>
 
                 <div className="project-actions">
-                  <button className="project-btn-primary">Open Project</button>
-                  <button className="project-btn-secondary">GitHub</button>
+                  {featuredProject.liveLink ? (
+                    <a
+                      className="project-btn-primary"
+                      href={featuredProject.liveLink}
+                      target="_blank"
+                      rel="noreferrer"
+                      onClick={(e) => e.stopPropagation()}
+                    >
+                      Live Demo
+                    </a>
+                  ) : (
+                    <button className="project-btn-primary">Open Project</button>
+                  )}
+
+                  <a
+                    className="project-btn-secondary"
+                    href={featuredProject.githubLink}
+                    target="_blank"
+                    rel="noreferrer"
+                    onClick={(e) => e.stopPropagation()}
+                  >
+                    GitHub
+                  </a>
                 </div>
               </div>
             </article>
 
             <div className="projects-side-column">
-              
-            {sideProjects.map((project, index) => (
-              <article
-                key={project.title}
-                className={`project-side-card side-tilt-${(index % 3) + 1}`}
-                onClick={() => setSelectedProject(project)}
-                onMouseMove={(e) => {
-                  const rect = e.currentTarget.getBoundingClientRect();
-                  const x = e.clientX - rect.left;
-                  const y = e.clientY - rect.top;
+              {sideProjects.map((project, index) => (
+                <article
+                  key={project.title}
+                  className={`project-side-card side-tilt-${(index % 3) + 1}`}
+                  onClick={() => setSelectedProject(project)}
+                  onMouseMove={(e) => {
+                    const rect = e.currentTarget.getBoundingClientRect();
+                    const x = e.clientX - rect.left;
+                    const y = e.clientY - rect.top;
 
-                  const centerX = rect.width / 2;
-                  const centerY = rect.height / 2;
+                    const centerX = rect.width / 2;
+                    const centerY = rect.height / 2;
 
-                  const rotateX = ((y - centerY) / centerY) * -4;
-                  const rotateY = ((x - centerX) / centerX) * 4;
+                    const rotateX = ((y - centerY) / centerY) * -4;
+                    const rotateY = ((x - centerX) / centerX) * 4;
 
-                  e.currentTarget.style.setProperty("--mx", `${x}px`);
-                  e.currentTarget.style.setProperty("--my", `${y}px`);
-                  e.currentTarget.style.transform =
-                    `translateX(8px) scale(1.015) rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
-                }}
+                    e.currentTarget.style.setProperty("--mx", `${x}px`);
+                    e.currentTarget.style.setProperty("--my", `${y}px`);
+                    e.currentTarget.style.transform = `translateX(8px) scale(1.015) rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
+                  }}
+                  onMouseLeave={(e) => {
+                    e.currentTarget.style.setProperty("--mx", "50%");
+                    e.currentTarget.style.setProperty("--my", "50%");
+                    e.currentTarget.style.transform = "";
+                  }}
+                >
+                  <div className="side-card-left">
+                    <div className="side-number">0{index + 2}</div>
+                  </div>
 
-                onMouseLeave={(e) => {
-                  e.currentTarget.style.setProperty("--mx", `50%`);
-                  e.currentTarget.style.setProperty("--my", `50%`);
-                  e.currentTarget.style.transform = "";
-                }}
-              >
-                <div className="side-card-left">
-                  <div className="side-number">0{index + 2}</div>
-                </div>
+                  <div className="side-card-middle">
+                    <p className="project-category side-category">
+                      {project.shortCategory}
+                    </p>
+                    <h3 className="side-title">{project.title}</h3>
+                    <p className="side-subtitle">{project.subtitle}</p>
+                  </div>
 
-                <div className="side-card-middle">
-                  <p className="project-category side-category">
-                    {project.shortCategory}
-                  </p>
-                  <h3 className="side-title">{project.title}</h3>
-                  <p className="side-subtitle">{project.subtitle}</p>
-                </div>
-
-                <div className="side-card-right">
-                  <div className="side-arrow">↗</div>
-                </div>
-              </article>
-            ))}
-
+                  <div className="side-card-right">
+                    <div className="side-arrow">↗</div>
+                  </div>
+                </article>
+              ))}
             </div>
           </div>
         </section>
       </main>
 
       {selectedProject && (
-        <div className="project-modal-overlay" onClick={() => setSelectedProject(null)}>
-          <div
-            className="project-modal"
-            onClick={(e) => e.stopPropagation()}
-          >
+        <div
+          className="project-modal-overlay"
+          onClick={() => setSelectedProject(null)}
+        >
+          <div className="project-modal" onClick={(e) => e.stopPropagation()}>
             <button
               className="modal-close"
               onClick={() => setSelectedProject(null)}
@@ -311,43 +471,67 @@ export default function App() {
               </div>
             </div>
 
+            
+
             <div className="modal-bottom">
               <div className="modal-section">
-                <h3 className="modal-section-title">Overview</h3>
-                <p className="modal-section-text">{selectedProject.details}</p>
+                <h3 className="modal-section-title">
+                  {selectedProject.overviewTitle || "Overview"}
+                </h3>
+                <p className="modal-section-text">
+                  {selectedProject.overview || selectedProject.details}
+                </p>
               </div>
 
-              <div className="modal-grid-sections">
-                <div className="modal-mini-card">
-                  <h4 className="modal-mini-title">Problem</h4>
-                  <p className="modal-mini-text">
-                    Identify a real challenge and turn it into a usable
-                    engineering solution.
-                  </p>
+              {selectedProject.highlightCards && selectedProject.highlightCards.length > 0 && (
+                <div className="modal-grid-sections">
+                  {selectedProject.highlightCards.map((card) => (
+                    <div key={card.title} className="modal-mini-card">
+                      <h4 className="modal-mini-title">{card.title}</h4>
+                      <p className="modal-mini-text">{card.text}</p>
+                    </div>
+                  ))}
                 </div>
+              )}
 
-                <div className="modal-mini-card">
-                  <h4 className="modal-mini-title">Approach</h4>
-                  <p className="modal-mini-text">
-                    Combine technical design, testing, and structured system
-                    thinking.
-                  </p>
+              {selectedProject.sections && selectedProject.sections.length > 0 && (
+                <div className="modal-detail-list">
+                  {selectedProject.sections.map((section) => (
+                    <div key={section.title} className="modal-detail-card">
+                      <h4 className="modal-detail-title">{section.title}</h4>
+                      <p className="modal-detail-text">{section.text}</p>
+                    </div>
+                  ))}
                 </div>
-
-                <div className="modal-mini-card">
-                  <h4 className="modal-mini-title">Result</h4>
-                  <p className="modal-mini-text">
-                    A strong portfolio project with both technical and visual
-                    impact.
-                  </p>
-                </div>
-              </div>
+              )}
 
               <div className="modal-actions">
-                <button className="project-btn-primary">Live Demo</button>
-                <button className="project-btn-secondary">GitHub</button>
+                {selectedProject.liveLink ? (
+                  <a
+                    className="project-btn-primary"
+                    href={selectedProject.liveLink}
+                    target="_blank"
+                    rel="noreferrer"
+                  >
+                    Live Demo
+                  </a>
+                ) : (
+                  <button className="project-btn-primary" disabled>
+                    Live Demo
+                  </button>
+                )}
+
+                <a
+                  className="project-btn-secondary"
+                  href={selectedProject.githubLink}
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  GitHub
+                </a>
               </div>
             </div>
+
           </div>
         </div>
       )}
