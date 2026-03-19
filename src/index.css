@@ -1568,4 +1568,178 @@ button {
   .sensor-panel-log {
     grid-column: auto;
   }
-}
+  }
+
+  @media (max-width: 700px) {
+    /* mobile styles here */
+  }
+
+  /* paste the preview card fix here */
+  .hero-right .preview-card,
+  .hero-right .preview-card:link,
+  .hero-right .preview-card:visited,
+  .hero-right .preview-card:hover,
+  .hero-right .preview-card:active {
+    text-decoration: none !important;
+    color: inherit !important;
+    display: block;
+  }
+
+  .hero-right .preview-card .preview-title,
+  .hero-right .preview-card .preview-title:link,
+  .hero-right .preview-card .preview-title:visited,
+  .hero-right .preview-card .preview-subtitle,
+  .hero-right .preview-card .preview-subtitle:link,
+  .hero-right .preview-card .preview-subtitle:visited {
+    text-decoration: none !important;
+    color: inherit !important;
+  }
+
+  .hero-right .preview-card .preview-title {
+    color: #ffffff !important;
+  }
+
+  .hero-right .preview-card .preview-subtitle {
+    color: #b7acac !important;
+  }
+
+  a.preview-card,
+  a.preview-card:link,
+  a.preview-card:visited,
+  a.preview-card:hover,
+  a.preview-card:active {
+    text-decoration: none !important;
+    color: inherit !important;
+    display: block;
+  }
+
+  a.preview-card .preview-title {
+    color: #ffffff !important;
+    text-decoration: none !important;
+  }
+
+  a.preview-card .preview-subtitle {
+    color: #b7acac !important;
+    text-decoration: none !important;
+  }
+
+  .preview-image {
+    display: flex;
+    align-items: stretch;
+    justify-content: stretch;
+  }
+
+  .preview-image .sensor-preview {
+    width: 100%;
+    height: 100%;
+    border-radius: 18px;
+  }
+
+  .sensor-preview-compact .sensor-preview-grid {
+    padding: 10px;
+    gap: 10px;
+  }
+
+  .sensor-preview-compact .sensor-label {
+    font-size: 11px;
+    margin-bottom: 8px;
+  }
+
+  .sensor-preview-compact .sensor-value {
+    font-size: 18px;
+    margin-bottom: 10px;
+  }
+
+  .sensor-preview-compact .sensor-value span {
+    font-size: 12px;
+  }
+
+  .sensor-preview-compact .sensor-mode-row {
+    font-size: 12px;
+    margin-bottom: 10px;
+  }
+
+  .sensor-preview-compact .sensor-mini-lines {
+    gap: 6px;
+  }
+
+  .sensor-preview-compact .sensor-mini-lines span {
+    height: 4px;
+  }
+
+  .preview-gemini {
+    width: 100%;
+    height: 100%;
+    border-radius: 18px;
+    padding: 14px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background:
+      radial-gradient(circle at 20% 20%, rgba(120, 220, 255, 0.12), transparent 28%),
+      radial-gradient(circle at 80% 70%, rgba(170, 255, 120, 0.1), transparent 28%),
+      linear-gradient(135deg, #09131b 0%, #102332 52%, #18240f 100%);
+    border: 1px solid rgba(180, 220, 220, 0.16);
+  }
+
+  .preview-gemini-badge {
+    font-size: 28px;
+    font-weight: 800;
+    letter-spacing: 1px;
+    color: #d7f5b5;
+    margin-bottom: 8px;
+  }
+
+  .preview-gemini-line {
+    width: 100%;
+    height: 8px;
+    border-radius: 999px;
+    background: linear-gradient(90deg, #3ce6ff, #d8ff52);
+    opacity: 0.8;
+    margin-bottom: 12px;
+  }
+
+  .preview-gemini-text {
+    color: #ffffff;
+    font-size: 16px;
+    font-weight: 700;
+    margin-bottom: 6px;
+  }
+
+  .preview-gemini-subtext {
+    color: #c1d1d1;
+    font-size: 12px;
+  }
+
+  .preview-image {
+    height: 160px; /* 🔥 increase this if you want bigger */
+    display: flex;
+    align-items: stretch;
+  }
+
+  .preview-image-inner {
+    width: 100%;
+    height: 100%;
+  }
+
+  /* FORCE sensor preview to fill */
+  .preview-image .sensor-preview {
+    width: 100%;
+    height: 100%;
+    display: flex;
+  }
+
+  /* make grid fill space */
+  .sensor-preview-grid {
+    height: 100%;
+  }
+
+  /* GEMINI fill */
+  .preview-gemini {
+    height: 100%;
+  }
+
+
+
+
+

@@ -7,17 +7,21 @@ export default function App() {
       subtitle: "Sensors • Embedded • Web Interface",
       glow: false,
       link: "https://heaven-k.github.io/EEC172-Focussense-Final-Project/#arch",
+      type: "sensor",
     },
     {
       title: "Multimodal Imaging for Agriculture",
       subtitle: "Raspberry Pi • Vision • Edge AI",
       glow: true,
       link: "https://projectgemini.ucdavis.edu/",
+      type: "gemini",
     },
     {
       title: "FPGA Matrix Accelerator",
       subtitle: "Verilog • Parallel Compute • Digital Design",
       glow: false,
+      link: "#",
+      type: "default",
     },
   ];
 
@@ -71,7 +75,7 @@ export default function App() {
       ],
       sections: [
         {
-          title: "What I Built:",   
+          title: "What I Built:",
           text: "FocusSense is a smart workspace project that uses embedded sensors and a web dashboard to monitor environmental conditions. It collects real-time data and presents it in a simple interface so users can quickly understand what is happening in their workspace.",
         },
         {
@@ -100,7 +104,7 @@ export default function App() {
       tech: ["Computer Vision", "Raspberry Pi", "Edge AI"],
       details:
         "This project develops a low-cost four-camera Raspberry Pi multispectral imaging system for agriculture, designed to support plant health analysis and field-level decision making. It combines multispectral sensing, RGB-based calibration, parallax correction, and edge-based computer vision to extract useful information such as vegetation traits and flower detection. The project is especially meaningful because it aims to make advanced agricultural imaging more affordable and practical for small-scale breeders and farmers.",
-       liveLink:"https://projectgemini.ucdavis.edu/",
+      liveLink: "https://projectgemini.ucdavis.edu/",
       githubLink: "#",
     },
     {
@@ -156,8 +160,7 @@ export default function App() {
       tech: ["Audio", "Signal Flow", "Live Systems"],
       details:
         "This project showcases full-scale live audio systems engineering, from system design and equipment installation to signal flow architecture and real-time sound optimization. I build and manage complete audio systems involving microphones, instruments, mixers, and speakers to deliver clear and balanced sound in live environments. The work also involves live troubleshooting, rapid system adjustments, and training others on audio setup and operation. It highlights strong system-level thinking, leadership in technical environments, and the ability to deliver reliable performance under real-world pressure.",
-      
-      liveLink:"",
+      liveLink: "",
       githubLink: "#",
     },
   ];
@@ -200,7 +203,10 @@ export default function App() {
   }, []);
 
   const lightWidth = `${Math.max(0, Math.min(sensorData.light, 100))}%`;
-  const tempWidth = `${Math.max(0, Math.min((sensorData.temp / 30) * 100, 100))}%`;
+  const tempWidth = `${Math.max(
+    0,
+    Math.min((sensorData.temp / 30) * 100, 100)
+  )}%`;
 
   const SensorPreview = ({ compact = false }) => (
     <div
@@ -277,29 +283,51 @@ export default function App() {
 
               <div className="hero-buttons">
                 <button className="primary-btn">View Projects</button>
-                <button className="secondary-btn">Resume</button>
+              <a
+                className="secondary-btn"
+                href={`${window.location.origin}/Heaven-portfolio/Resume.pdf`}
+                target="_blank"
+                rel="noreferrer"
+              >
+                Resume
+              </a>
+
+
               </div>
             </div>
 
             <div className="hero-right">
-              {previewProjects.map((project, index) => (
-                <div
+              {previewProjects.map((project) => (
+                <a
                   key={project.title}
+                  href={project.link}
+                  target="_blank"
+                  rel="noreferrer"
                   className={`preview-card ${
                     project.glow ? "preview-card-glow" : ""
                   }`}
                 >
-                  {index === 0 ? (
-                    <SensorPreview compact={true} />
-                  ) : (
-                    <div className="preview-image">
+                  <div className="preview-image">
+                    {project.type === "sensor" ? (
+                      <SensorPreview compact />
+                    ) : project.type === "gemini" ? (
+                      <div className="preview-gemini">
+                        <div className="preview-gemini-badge">GEMINI</div>
+                        <div className="preview-gemini-line"></div>
+                        <div className="preview-gemini-text">
+                          Multispectral Imaging
+                        </div>
+                        <div className="preview-gemini-subtext">
+                          Agriculture • AI • Vision
+                        </div>
+                      </div>
+                    ) : (
                       <div className="preview-image-inner" />
-                    </div>
-                  )}
-
+                    )}
+                  </div>
                   <h3 className="preview-title">{project.title}</h3>
                   <p className="preview-subtitle">{project.subtitle}</p>
-                </div>
+                </a>
               ))}
             </div>
           </div>
@@ -471,8 +499,6 @@ export default function App() {
               </div>
             </div>
 
-            
-
             <div className="modal-bottom">
               <div className="modal-section">
                 <h3 className="modal-section-title">
@@ -483,27 +509,29 @@ export default function App() {
                 </p>
               </div>
 
-              {selectedProject.highlightCards && selectedProject.highlightCards.length > 0 && (
-                <div className="modal-grid-sections">
-                  {selectedProject.highlightCards.map((card) => (
-                    <div key={card.title} className="modal-mini-card">
-                      <h4 className="modal-mini-title">{card.title}</h4>
-                      <p className="modal-mini-text">{card.text}</p>
-                    </div>
-                  ))}
-                </div>
-              )}
+              {selectedProject.highlightCards &&
+                selectedProject.highlightCards.length > 0 && (
+                  <div className="modal-grid-sections">
+                    {selectedProject.highlightCards.map((card) => (
+                      <div key={card.title} className="modal-mini-card">
+                        <h4 className="modal-mini-title">{card.title}</h4>
+                        <p className="modal-mini-text">{card.text}</p>
+                      </div>
+                    ))}
+                  </div>
+                )}
 
-              {selectedProject.sections && selectedProject.sections.length > 0 && (
-                <div className="modal-detail-list">
-                  {selectedProject.sections.map((section) => (
-                    <div key={section.title} className="modal-detail-card">
-                      <h4 className="modal-detail-title">{section.title}</h4>
-                      <p className="modal-detail-text">{section.text}</p>
-                    </div>
-                  ))}
-                </div>
-              )}
+              {selectedProject.sections &&
+                selectedProject.sections.length > 0 && (
+                  <div className="modal-detail-list">
+                    {selectedProject.sections.map((section) => (
+                      <div key={section.title} className="modal-detail-card">
+                        <h4 className="modal-detail-title">{section.title}</h4>
+                        <p className="modal-detail-text">{section.text}</p>
+                      </div>
+                    ))}
+                  </div>
+                )}
 
               <div className="modal-actions">
                 {selectedProject.liveLink ? (
@@ -531,7 +559,6 @@ export default function App() {
                 </a>
               </div>
             </div>
-
           </div>
         </div>
       )}
